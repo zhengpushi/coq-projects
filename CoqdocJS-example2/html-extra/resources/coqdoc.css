@@ -27,12 +27,13 @@ a[href]:hover, [clickable]:hover{
 }
 
 h, h1, h2, h3, h4, h5 {
-    line-height: 1;
-    color: black;
+    line-height: 1.1;
+    padding: 5px 10px 5px 10px;
     text-rendering: optimizeLegibility;
     font-weight: normal;
     letter-spacing: 0.1em;
     text-align: left;
+    background-color: #468
 }
 
 div + br {
@@ -42,19 +43,27 @@ div + br {
 div:empty{ display: none;}
 
 #main h1 {
-	font-size: 2em;
+	font-size: 1.8em;
+    color: #FFF;
+    font-weight:900;
 }
 
 #main h2 {
-	font-size: 1.667rem;
+	font-size: 1.40em;
+    color: #FFF;
+    font-weight:600;
 }
 
 #main h3 {
-	font-size: 1.333em;
+	font-size: 1.2em;
+    color: #FFF;
+    font-weight:400;
 }
 
 #main h4, #main h5, #main h6 {
 	font-size: 1em;
+    color: #FFF;
+    font-weight:300;
 }
 
 #toc h2 {

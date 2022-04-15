@@ -19,6 +19,7 @@ Fixpoint mynat_plus n1 n2 : mynat :=
   | succ n1', _ => succ (mynat_plus n1' n2)
   end.
 
+(** *** Notations *)
 Infix "+" := mynat_plus.
 
 (** ** Properties *)
