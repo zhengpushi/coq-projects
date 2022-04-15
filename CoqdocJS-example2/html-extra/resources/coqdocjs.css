@@ -4,38 +4,41 @@
   font-size: 0;
 }
 
-.id[repl]:before{
+.id[repl]:before {
   content: attr(repl);
 }
 
 /* folding proofs */
 
 @keyframes show-proof {
-    0% {
-      max-height: 1.2em;
-      opacity: 1;
-    }
-    99% {
-      max-height: 1000em;
-    }
-    100%{
-    }
+  0% {
+    max-height: 1.2em;
+    opacity: 1;
+  }
+
+  99% {
+    max-height: 1000em;
+  }
+
+  100% {}
 }
 
 @keyframes hide-proof {
-    from {
-      visibility: visible;
-      max-height: 10em;
-      opacity: 1;
-    }
-    to {
-      max-height: 1.2em;
-    }
+  from {
+    visibility: visible;
+    max-height: 10em;
+    opacity: 1;
+  }
+
+  to {
+    max-height: 1.2em;
+  }
 }
 
 .proof {
   cursor: pointer;
 }
+
 .proof * {
   cursor: pointer;
 }
@@ -49,8 +52,8 @@
 
 .proof[show="false"] {
   max-height: 1.2em;
-  visibility: visible;
-  opacity: 0.3;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .proof[show="false"][animate] {
@@ -72,11 +75,12 @@
   opacity: 0;
   content: "M";
 }
+
 .proof[show="false"]:hover:before {
   content: "";
 }
 
-.proof[show="false"] + br + br {
+.proof[show="false"]+br+br {
   display: none;
 }
 
@@ -100,34 +104,36 @@
 
 /* page layout */
 
-html, body {
+html,
+body {
   height: 100%;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
-@media only screen { /* no div with internal scrolling to allow printing of whole content */
-    body {
-        display: flex;
-        flex-direction: column 
-    }
+body {
+  display: flex;
+  flex-direction: column
+}
 
-    #content {
-        flex: 1;
-        overflow: auto;
-        display: flex;
-        flex-direction: column;
-    }
+#content {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 #content:focus {
-  outline: none; /* prevent glow in OS X */
+  outline: none;
+  /* prevent glow in OS X */
 }
 
 #main {
-    display: block;
-    margin: 5px;
-    flex: 1 0 auto;
+  display: block;
+  padding: 0;
+  margin: 20px;
+  max-width: 90%;
+  flex: 1 0 auto;
 }
 
 .libtitle {
@@ -136,12 +142,12 @@ html, body {
 
 /* header */
 #header {
-  width:100%;
+  width: 100%;
   padding: 0;
   margin: 0;
   display: flex;
   align-items: center;
-  background-color: rgb(21,57,105);
+  background-color: rgb(21, 57, 105);
   color: white;
   font-weight: bold;
   overflow: hidden;
@@ -153,27 +159,31 @@ html, body {
 }
 
 #header * {
-    text-decoration: none;
-    vertical-align: middle;
-    margin-left: 15px;
-    margin-right: 15px;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
-#header > .right, #header > .left {
+#header>.right,
+#header>.left {
   display: flex;
   flex: 1;
   align-items: center;
 }
-#header > .left {
+
+#header>.left {
   text-align: left;
 }
-#header > .right {
+
+#header>.right {
   flex-direction: row-reverse;
 }
 
-#header a, #header .button {
-    color: white;
-    box-sizing: border-box;
+#header a,
+#header .button {
+  color: white;
+  box-sizing: border-box;
 }
 
 #header a {
@@ -189,13 +199,16 @@ html, body {
   margin: 0.2em;
 }
 
-#header a:hover, #header .button:hover {
-    background-color: rgb(181, 213, 255);
-    color: black;
+#header a:hover,
+#header .button:hover {
+  background-color: rgb(181, 213, 255);
+  color: black;
 }
 
-#header h1 { padding: 0;
-             margin: 0;}
+#header h1 {
+  padding: 0;
+  margin: 0;
+}
 
 /* footer */
 #footer {
@@ -207,9 +220,9 @@ html, body {
 /* hyperlinks */
 
 @keyframes highlight {
-    50%{
-      background-color: black;
-    }
+  50% {
+    background-color: black;
+  }
 }
 
 :target * {
@@ -219,26 +232,4 @@ html, body {
 
 a[name]:empty {
   float: right;
-}
-
-/* Proviola */
-
-div.code {
-  width: auto;
-  float: none;
-}
-
-div.goal {
-  position: fixed;
-  left: 75%;
-  width: 25%;
-  top: 3em;
-}
-
-div.doc {
-  clear: both;
-}
-
-span.command:hover {
-  background-color: inherit;
 }
