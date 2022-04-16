@@ -32,17 +32,14 @@ by Zhengpu SHI. (2022.04.15)
   https://coq-community.org/coq-ext-lib/v0.11.6/toc.html
 
 ## 3. What you could do?
-1. modify _CoqProject to specify the project-logical-name for CoqIDE only, 
-        and the files for Makefile
-   (2). modify Makefile.coq.local to specify the project-logical-name for Makefile
-   (3). modify html-extra/*.html to your favorite style
-   (4). make, optional with "clean/cleanall/html/install/uninstall" flag
+1. modify _CoqProject to specify the project-logical-name and the files.
+2. modify html-extra/*.html to your favorite style.
+3. make, optional with "clean/cleanall/html/install/uninstall" flag.
 
 ## 4. Files
 * README，this file
 * LICENSE-CoqdocJS，original license file of CoqdocJS project
 * Makefile, for make
 * _CoqProject, for CoqIDE and coq_makefile
-* Makefile.coq.local, for configuration
 * src/, your Coq source files
 * html-extra/, coqdocjs project files

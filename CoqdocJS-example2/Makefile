@@ -1,6 +1,14 @@
-# please read README before use
-
 COQMAKEFILE ?= Makefile.coq
+
+HTML_EXTRA_DIR = html-extra
+COQDOCFLAGS ?= \
+  --toc --toc-depth 2 --html --interpolate \
+  --index indexpage \
+  --no-lib-name \
+  --parse-comments \
+  --with-header $(HTML_EXTRA_DIR)/header.html \
+  --with-footer $(HTML_EXTRA_DIR)/footer.html
+export COQDOCFLAGS
 
 all: $(COQMAKEFILE)
 	$(MAKE) -f $^ $@
@@ -17,7 +25,7 @@ cleanall: $(COQMAKEFILE)
 
 html: $(COQMAKEFILE)
 	$(MAKE) -f $^ $@
-	cp html-extra/* html/ -R
+	cp $(HTML_EXTRA_DIR)/* html/ -R
 
 install: $(COQMAKEFILE)
 	$(MAKE) -f $^ install

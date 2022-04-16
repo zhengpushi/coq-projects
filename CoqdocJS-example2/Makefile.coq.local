@@ -1,9 +1,0 @@
-# Read README before use
-
-COQFLAGS = -R ./src/ "MyNat"
-HTML_EXTRA_DIR = html-extra
-COQDOCFLAGS ?= \
-  --toc --toc-depth 2 --html --interpolate \
-  --index indexpage --no-lib-name --parse-comments \
-  --with-header $(HTML_EXTRA_DIR)/header.html --with-footer $(HTML_EXTRA_DIR)/footer.html
-export COQDOCFLAGS

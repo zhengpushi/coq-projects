@@ -1,6 +1,4 @@
 -R ./src/ MyNat
--arg -W
--arg all
 
 src/mynat.v
 src/mynatExt.v
