@@ -5,9 +5,9 @@ COQDOCFLAGS ?= \
   --toc --toc-depth 2 --html --interpolate \
   --index indexpage \
   --no-lib-name \
-  --parse-comments \
   --with-header $(HTML_EXTRA_DIR)/header.html \
-  --with-footer $(HTML_EXTRA_DIR)/footer.html
+  --with-footer $(HTML_EXTRA_DIR)/footer.html \
+  --parse-comments
 export COQDOCFLAGS
 
 all: $(COQMAKEFILE)
