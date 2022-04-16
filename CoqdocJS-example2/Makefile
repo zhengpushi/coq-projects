@@ -34,3 +34,4 @@ uninstall: $(COQMAKEFILE)
 	$(MAKE) -f $^ uninstall
 
 
+.PHONY: all clean cleanall html install uninstall
